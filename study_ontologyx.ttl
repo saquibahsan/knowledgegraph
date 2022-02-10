@@ -1,0 +1,261 @@
+# baseURI: urn:x-evn-master:study_ontology
+# imports: http://datashapes.org/graphql
+# imports: http://topbraid.org/teamworkconstraints
+
+@prefix study: <http://ontology.bms.com/ontologies/Study#> .
+@prefix metadata: <http://topbraid.org/metadata#> .
+@prefix ncit:  <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix teamwork: <http://topbraid.org/teamwork#> .
+@prefix study_ontology: <http://ontology.bms.com/ontologies/Study_Ontology#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dash:  <http://datashapes.org/dash#> .
+
+ncit:C63536  rdf:type    owl:Class ;
+        rdf:type         sh:NodeShape ;
+        sh:property      ncit:C63536-studyId ;
+        sh:property      ncit:C63536-studyName ;
+        sh:property      ncit:C63536-dataLocation ;
+        sh:property      ncit:C63536-StudyType ;
+        sh:property      ncit:C63536-StudyDesign ;
+        sh:property      ncit:C63536-StudyPhase ;
+        sh:property      ncit:C63536-TherapeuticArea ;
+        sh:property      ncit:C63536-ClinicalDevLead ;
+        sh:property      ncit:C63536-GBSLead ;
+        sh:property      ncit:C63536-EnrollmentStatus ;
+        sh:property      ncit:C63536-StudyClassification ;
+        sh:property      ncit:C63536-StudyStatus ;
+        sh:property      ncit:C63536-ExclusionCriteria ;
+        sh:property      ncit:C63536-InclusionCriteria ;
+        sh:property      ncit:C63536-StudySponsorship ;
+        sh:property      ncit:C63536-Indication ;
+        rdfs:label       "Study" ;
+        rdfs:subClassOf  owl:Thing .
+
+ncit:C16112  rdf:type    owl:Class ;
+        rdf:type         sh:NodeShape ;
+        rdfs:label       "Clinical Trial Eligibility Criteria" ;
+        rdfs:subClassOf  owl:Thing .
+
+ncit:C101302  rdf:type   owl:Class ;
+        rdf:type         sh:NodeShape ;
+        rdfs:label       "Therapeutic Area" ;
+        rdfs:subClassOf  owl:Thing .
+
+ncit:C142175  rdf:type   owl:Class ;
+        rdf:type         sh:NodeShape ;
+        rdfs:label       "Study Type" ;
+        rdfs:subClassOf  owl:Thing .
+
+ncit:C25532  rdf:type    owl:Class ;
+        rdf:type         sh:NodeShape ;
+        rdfs:label       "Inclusion Criteria" ;
+        rdfs:subClassOf  ncit:C16112 .
+
+ncit:C41184  rdf:type    owl:Class ;
+        rdf:type         sh:NodeShape ;
+        rdfs:label       "Indication" ;
+        rdfs:subClassOf  ncit:C101302 .
+
+ncit:C122673  rdf:type   owl:Class ;
+        rdf:type         sh:NodeShape ;
+        rdfs:label       "Study Sponsorship" ;
+        rdfs:subClassOf  owl:Thing .
+
+ncit:C25370  rdf:type    owl:Class ;
+        rdf:type         sh:NodeShape ;
+        rdfs:label       "Exclusion Criteria" ;
+        rdfs:subClassOf  ncit:C16112 .
+
+ncit:C15320  rdf:type    owl:Class ;
+        rdf:type         sh:NodeShape ;
+        rdfs:label       "Study Design" ;
+        rdfs:subClassOf  owl:Thing .
+
+ncit:C49660  rdf:type    owl:Class ;
+        rdf:type         sh:NodeShape ;
+        rdfs:label       "Trial Type" ;
+        rdfs:subClassOf  owl:Thing .
+
+ncit:C171103  rdf:type   owl:Class ;
+        rdf:type         sh:NodeShape ;
+        rdfs:label       "Study Status" ;
+        rdfs:subClassOf  owl:Thing .
+
+ncit:C171160  rdf:type   owl:Class ;
+        rdf:type         sh:NodeShape ;
+        rdfs:label       "Study Enrollment Status" ;
+        rdfs:subClassOf  owl:Thing .
+
+ncit:C93622  rdf:type    owl:Class ;
+        rdf:type         sh:NodeShape ;
+        rdfs:label       "Phase Code" ;
+        rdfs:subClassOf  owl:Thing .
+
+study:GBSLead  rdf:type  owl:Class ;
+        rdf:type         sh:NodeShape ;
+        rdfs:label       "GBS Lead" ;
+        rdfs:subClassOf  study:Lead .
+
+study:ClinicalDevLead
+        rdf:type         owl:Class ;
+        rdf:type         sh:NodeShape ;
+        rdfs:label       "Clinical Dev Lead" ;
+        rdfs:subClassOf  study:Lead .
+
+study:ExecutionStatus
+        rdf:type         owl:Class ;
+        rdf:type         sh:NodeShape ;
+        rdfs:label       "Execution Status" ;
+        rdfs:subClassOf  owl:Thing .
+
+ncit:C63536-studyId  rdf:type  sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:path         study_ontology:studyId ;
+        sh:name         "Study Id" ;
+        sh:minCount     1 ;
+        sh:maxCount     1 ;
+        sh:description  "The Id of the study." ;
+        sh:severity     sh:Violation .
+
+ncit:C63536-studyName
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:path         study_ontology:studyName ;
+        sh:name         "Study name" ;
+        sh:minCount     1 ;
+        sh:description  "Name of the study." ;
+        sh:severity     sh:Violation .
+
+ncit:C63536-dataLocation
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:path         study_ontology:dataLocation ;
+        sh:name         "Data location" ;
+        sh:description  "Global URI for the location of the data set." .
+
+ncit:C63536-StudyType
+        rdf:type        sh:PropertyShape ;
+        sh:path         study_ontology:StudyType ;
+        sh:name         "Study type" ;
+        sh:minCount     1 ;
+        sh:class        ncit:C142175 ;
+        sh:description  "Type of the Study. Example - Interventional, Observational." ;
+        sh:severity     sh:Info .
+
+ncit:C63536-StudyDesign
+        rdf:type        sh:PropertyShape ;
+        sh:path         study_ontology:StudyDesign ;
+        sh:name         "Study design" ;
+        sh:minCount     1 ;
+        sh:class        ncit:C15320 ;
+        sh:description  "The design of the study." ;
+        sh:severity     sh:Info .
+
+ncit:C63536-StudyPhase
+        rdf:type     sh:PropertyShape ;
+        sh:path      study_ontology:StudyPhase ;
+        sh:name      "Study phase" ;
+        sh:minCount  1 ;
+        sh:class     ncit:C93622 ;
+        sh:severity  sh:Info .
+
+ncit:C63536-TherapeuticArea
+        rdf:type     sh:PropertyShape ;
+        sh:path      study_ontology:TherapeuticArea ;
+        sh:name      "Therapeutic area" ;
+        sh:class     ncit:C101302 ;
+        sh:nodeKind  sh:IRI .
+
+ncit:C63536-ClinicalDevLead
+        rdf:type        sh:PropertyShape ;
+        sh:path         study_ontology:ClinicalDevLead ;
+        sh:name         "Clinical Dev Lead" ;
+        sh:class        study:ClinicalDevLead ;
+        sh:description  "Name of the Clinical Development Lead for the study." .
+
+ncit:C63536-GBSLead  rdf:type  sh:PropertyShape ;
+        sh:path         study_ontology:GBSLead ;
+        sh:name         "GBS Lead" ;
+        sh:class        study:GBSLead ;
+        sh:description  "Name of the GBS Lead." .
+
+ncit:C63536-EnrollmentStatus
+        rdf:type        sh:PropertyShape ;
+        sh:path         study_ontology:EnrollmentStatus ;
+        sh:name         "Enrollment status" ;
+        sh:minCount     1 ;
+        sh:class        ncit:C171160 ;
+        sh:description  "Enrollment status of the study. Ex. - Completed, Recruiting, Not-Recruiting, etc." ;
+        sh:severity     sh:Violation .
+
+ncit:C63536-StudyClassification
+        rdf:type  sh:PropertyShape ;
+        sh:path   study_ontology:StudyClassification ;
+        sh:name   "Study classification" ;
+        sh:class  ncit:C49660 .
+
+ncit:C63536-StudyStatus
+        rdf:type     sh:PropertyShape ;
+        sh:path      study_ontology:StudyStatus ;
+        sh:name      "Study status" ;
+        sh:minCount  1 ;
+        sh:class     ncit:C171103 ;
+        sh:severity  sh:Info .
+
+ncit:C63536-ExclusionCriteria
+        rdf:type           sh:PropertyShape ;
+        sh:path            study_ontology:ExclusionCriteria ;
+        sh:name            "Exclusion criteria" ;
+        sh:class           ncit:C25370 ;
+        sh:description     "Exclusion criteria are those characteristics that disqualify prospective subjects from inclusion in the study. For example, No data or Does not include minimum outcomes." ;
+        sh:severity        sh:Info ;
+        dash:coExistsWith  study_ontology:InclusionCriteria .
+
+ncit:C63536-InclusionCriteria
+        rdf:type           sh:PropertyShape ;
+        sh:path            study_ontology:InclusionCriteria ;
+        sh:name            "Inclusion criteria" ;
+        sh:class           ncit:C25532 ;
+        sh:description     "Inclusion criteria are characteristics that the prospective subjects must have if they are to be included in the study. For example, Minimum outcomes: coronary deaths & non-fatal myocardial infarction." ;
+        sh:severity        sh:Info ;
+        dash:coExistsWith  study_ontology:ExclusionCriteria .
+
+ncit:C63536-StudySponsorship
+        rdf:type        sh:PropertyShape ;
+        sh:path         study_ontology:StudySponsorship ;
+        sh:name         "Study Sponsorship" ;
+        sh:class        ncit:C122673 ;
+        sh:description  "The sponsorship information for the initiation, management and / or financing of the clinical study. Ex. - BMS Sponsored, Externally sponsored" .
+
+ncit:C63536-Indication
+        rdf:type        sh:PropertyShape ;
+        sh:path         study_ontology:Indication ;
+        sh:name         "Indication" ;
+        sh:class        ncit:C41184 ;
+        sh:description  "The therapeutic indication of the study. Ex: Anxiety, Autistic Disorder, Atrial Fibrillation, Diabetes, etc." .
+
+study:Lead  rdf:type     owl:Class ;
+        rdf:type         sh:NodeShape ;
+        rdfs:label       "Lead" ;
+        rdfs:subClassOf  owl:Thing .
+
+<urn:x-evn-master:study_ontology>
+        rdf:type         owl:Ontology ;
+        owl:imports      <http://datashapes.org/graphql> ;
+        rdfs:label       "Study Ontology" ;
+        metadata:status  metadata:UnderDevelopmentStatus ;
+        <http://topbraid.org/swa#defaultNamespace>  "http://ontology.bms.com/ontologies/Study_Ontology#" .
+
+teamwork:Vocabulary  rdfs:subClassOf  owl:Ontology .
+
+<http://teamwork.topbraidlive.org/ontologyprojects#Ontology>
+        rdfs:subClassOf  teamwork:Vocabulary .
+
+<urn:x-evn-master:study_ontology>
+        rdf:type     teamwork:Vocabulary ;
+        rdf:type     <http://teamwork.topbraidlive.org/ontologyprojects#Ontology> ;
+        owl:imports  <http://topbraid.org/teamworkconstraints> .
