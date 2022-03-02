@@ -11,127 +11,111 @@
 @prefix edg:   <http://edg.topbraid.solutions/model/> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix be_fair_bms_clinical_study: <http://ontology.bms.com/ontologies/BE-FAIR_BMS_Clinical_Study#> .
+@prefix obo:   <http://purl.obolibrary.org/obo/> .
 
-<http://purl.obolibrary.org/obo/BFO_0000004>
-        rdf:type         owl:Class ;
+obo:BFO_0000004  rdf:type  owl:Class ;
         rdf:type         sh:NodeShape ;
         rdfs:label       "independent continuant" ;
-        rdfs:subClassOf  <http://purl.obolibrary.org/obo/BFO_0000002> .
+        rdfs:subClassOf  obo:BFO_0000002 .
 
-<http://purl.obolibrary.org/obo/BFO_0000031>
-        rdf:type         owl:Class ;
+obo:BFO_0000031  rdf:type  owl:Class ;
         rdf:type         sh:NodeShape ;
         rdfs:label       "generically dependent continuant" ;
-        rdfs:subClassOf  <http://purl.obolibrary.org/obo/BFO_0000002> .
+        rdfs:subClassOf  obo:BFO_0000002 .
 
-<http://purl.obolibrary.org/obo/BFO_0000003>
-        rdf:type         owl:Class ;
+obo:BFO_0000003  rdf:type  owl:Class ;
         rdf:type         sh:NodeShape ;
         rdfs:label       "occurent" ;
-        rdfs:subClassOf  <http://purl.obolibrary.org/obo/BFO_0000001> .
+        rdfs:subClassOf  obo:BFO_0000001 .
 
-<http://purl.obolibrary.org/obo/BFO_0000017>
-        rdf:type         owl:Class ;
+obo:BFO_0000017  rdf:type  owl:Class ;
         rdf:type         sh:NodeShape ;
         rdfs:label       "realizable entity" ;
-        rdfs:subClassOf  <http://purl.obolibrary.org/obo/BFO_0000020> .
+        rdfs:subClassOf  obo:BFO_0000020 .
 
-<http://purl.obolibrary.org/obo/BFO_0000020>
-        rdf:type         owl:Class ;
+obo:BFO_0000020  rdf:type  owl:Class ;
         rdf:type         sh:NodeShape ;
         rdfs:label       "specifically dependent continuant" ;
-        rdfs:subClassOf  <http://purl.obolibrary.org/obo/BFO_0000002> .
+        rdfs:subClassOf  obo:BFO_0000002 .
 
-<http://purl.obolibrary.org/obo/OBI_0000066>
-        rdf:type         owl:Class ;
+obo:OBI_0000066  rdf:type  owl:Class ;
         rdf:type         sh:NodeShape ;
         rdfs:label       "investigation" ;
-        rdfs:subClassOf  <http://purl.obolibrary.org/obo/OBI_0000011> .
+        rdfs:subClassOf  obo:OBI_0000011 .
 
-<http://purl.obolibrary.org/obo/BFO_0000019>
-        rdf:type         owl:Class ;
+obo:BFO_0000019  rdf:type  owl:Class ;
         rdf:type         sh:NodeShape ;
         rdfs:label       "quality" ;
-        rdfs:subClassOf  <http://purl.obolibrary.org/obo/BFO_0000020> .
+        rdfs:subClassOf  obo:BFO_0000020 .
 
-<http://purl.obolibrary.org/obo/OBI_0000011>
-        rdf:type         owl:Class ;
+obo:OBI_0000011  rdf:type  owl:Class ;
         rdf:type         sh:NodeShape ;
         rdfs:label       "planned process" ;
-        rdfs:subClassOf  <http://purl.obolibrary.org/obo/BFO_0000015> .
+        rdfs:subClassOf  obo:BFO_0000015 .
 
-<http://purl.obolibrary.org/obo/BFO_0000002>
-        rdf:type         owl:Class ;
+obo:BFO_0000002  rdf:type  owl:Class ;
         rdf:type         sh:NodeShape ;
         rdfs:label       "continuant" ;
-        rdfs:subClassOf  <http://purl.obolibrary.org/obo/BFO_0000001> .
+        rdfs:subClassOf  obo:BFO_0000001 .
 
-<http://purl.obolibrary.org/obo/IAO_0000030>
-        rdf:type         owl:Class ;
+obo:IAO_0000030  rdf:type  owl:Class ;
         rdf:type         sh:NodeShape ;
         rdfs:label       "information content entity" ;
-        rdfs:subClassOf  <http://purl.obolibrary.org/obo/BFO_0000031> .
+        rdfs:subClassOf  obo:BFO_0000031 .
 
-<http://purl.obolibrary.org/obo/BFO_0000040>
-        rdf:type         owl:Class ;
+obo:BFO_0000040  rdf:type  owl:Class ;
         rdf:type         sh:NodeShape ;
         rdfs:label       "material entity" ;
-        rdfs:subClassOf  <http://purl.obolibrary.org/obo/BFO_0000004> .
+        rdfs:subClassOf  obo:BFO_0000004 .
 
-<http://purl.obolibrary.org/obo/BFO_0000015>
-        rdf:type         owl:Class ;
+obo:BFO_0000015  rdf:type  owl:Class ;
         rdf:type         sh:NodeShape ;
         rdfs:label       "process" ;
-        rdfs:subClassOf  <http://purl.obolibrary.org/obo/BFO_0000003> .
+        rdfs:subClassOf  obo:BFO_0000003 .
 
-<http://purl.obolibrary.org/obo/BFO_0000001>
-        rdf:type         owl:Class ;
+obo:BFO_0000001  rdf:type  owl:Class ;
         rdf:type         sh:NodeShape ;
         rdfs:label       "entity" ;
         rdfs:subClassOf  owl:Thing .
 
-<http://purl.obolibrary.org/obo/OBI_0000355>
-        rdf:type         owl:Class ;
+obo:OBI_0000355  rdf:type  owl:Class ;
         rdf:type         sh:NodeShape ;
         rdfs:label       "hypothesis driven investigation" ;
-        rdfs:subClassOf  <http://purl.obolibrary.org/obo/OBI_0000066> .
+        rdfs:subClassOf  obo:OBI_0000066 .
 
-<http://purl.obolibrary.org/obo/BFO_0000141>
-        rdf:type         owl:Class ;
+obo:BFO_0000141  rdf:type  owl:Class ;
         rdf:type         sh:NodeShape ;
         rdfs:label       "immaterial entity" ;
-        rdfs:subClassOf  <http://purl.obolibrary.org/obo/BFO_0000004> .
+        rdfs:subClassOf  obo:BFO_0000004 .
 
-<http://purl.obolibrary.org/obo/ERO_0000015>
-        rdf:type         owl:Class ;
+obo:ERO_0000015  rdf:type  owl:Class ;
         rdf:type         sh:NodeShape ;
         rdfs:label       "human study" ;
-        rdfs:subClassOf  <http://purl.obolibrary.org/obo/OBI_0000355> .
+        rdfs:subClassOf  obo:OBI_0000355 .
 
-<http://purl.obolibrary.org/obo/NCIT_C15206>
-        rdf:type         owl:Class ;
+obo:NCIT_C15206  rdf:type  owl:Class ;
         rdf:type         sh:NodeShape ;
-        sh:property      <http://purl.obolibrary.org/obo/NCIT_C15206-StudyID> ;
-        sh:property      <http://purl.obolibrary.org/obo/NCIT_C15206-StudyName> ;
-        sh:property      <http://purl.obolibrary.org/obo/NCIT_C15206-TherapeuticArea> ;
-        sh:property      <http://purl.obolibrary.org/obo/NCIT_C15206-StudyStatus> ;
-        sh:property      <http://purl.obolibrary.org/obo/NCIT_C15206-GBSLead> ;
-        sh:property      <http://purl.obolibrary.org/obo/NCIT_C15206-ClinicalDevelopmentLead> ;
-        sh:property      <http://purl.obolibrary.org/obo/NCIT_C15206-StudyType> ;
-        sh:property      <http://purl.obolibrary.org/obo/NCIT_C15206-StudyDesign> ;
-        sh:property      <http://purl.obolibrary.org/obo/NCIT_C15206-StudySponsorship> ;
-        sh:property      <http://purl.obolibrary.org/obo/NCIT_C15206-StudyExecution> ;
-        sh:property      <http://purl.obolibrary.org/obo/NCIT_C15206-Indication> ;
-        sh:property      <http://purl.obolibrary.org/obo/NCIT_C15206-StudyPhase> ;
-        sh:property      <http://purl.obolibrary.org/obo/NCIT_C15206-StudyClassification> ;
-        sh:property      <http://purl.obolibrary.org/obo/NCIT_C15206-EnrollmentStatus> ;
-        sh:property      <http://purl.obolibrary.org/obo/NCIT_C15206-DataLocation> ;
-        sh:property      <http://purl.obolibrary.org/obo/NCIT_C15206-ExclusionCriteria> ;
-        sh:property      <http://purl.obolibrary.org/obo/NCIT_C15206-InclusionCriteria> ;
+        sh:property      obo:NCIT_C15206-StudyID ;
+        sh:property      obo:NCIT_C15206-StudyName ;
+        sh:property      obo:NCIT_C15206-TherapeuticArea ;
+        sh:property      obo:NCIT_C15206-StudyStatus ;
+        sh:property      obo:NCIT_C15206-GBSLead ;
+        sh:property      obo:NCIT_C15206-ClinicalDevelopmentLead ;
+        sh:property      obo:NCIT_C15206-StudyType ;
+        sh:property      obo:NCIT_C15206-StudyDesign ;
+        sh:property      obo:NCIT_C15206-StudySponsorship ;
+        sh:property      obo:NCIT_C15206-StudyExecution ;
+        sh:property      obo:NCIT_C15206-Indication ;
+        sh:property      obo:NCIT_C15206-StudyPhase ;
+        sh:property      obo:NCIT_C15206-StudyClassification ;
+        sh:property      obo:NCIT_C15206-EnrollmentStatus ;
+        sh:property      obo:NCIT_C15206-DataLocation ;
+        sh:property      obo:NCIT_C15206-ExclusionCriteria ;
+        sh:property      obo:NCIT_C15206-InclusionCriteria ;
         rdfs:label       "Clinical Trial" ;
         rdfs:label       "clinical study" ;
         rdfs:label       "Intervention Study" ;
-        rdfs:subClassOf  <http://purl.obolibrary.org/obo/ERO_0000015> .
+        rdfs:subClassOf  obo:ERO_0000015 .
 
 <urn:x-evn-master:be_fair_bms_clinical_study>
         rdf:type         owl:Ontology ;
@@ -141,7 +125,7 @@
         metadata:status  metadata:UnderDevelopmentStatus ;
         <http://topbraid.org/swa#defaultNamespace>  "http://ontology.bms.com/ontologies/BE-FAIR_BMS_Clinical_Study#" .
 
-<http://purl.obolibrary.org/obo/NCIT_C15206-StudyID>
+obo:NCIT_C15206-StudyID
         rdf:type        sh:PropertyShape ;
         sh:datatype     xsd:string ;
         sh:path         be_fair_bms_clinical_study:StudyID ;
@@ -152,7 +136,7 @@
         sh:description  "ID of the study\nUnique Study Identifier\ne.g. CN162-016" ;
         sh:severity     sh:Violation .
 
-<http://purl.obolibrary.org/obo/NCIT_C15206-StudyName>
+obo:NCIT_C15206-StudyName
         rdf:type        sh:PropertyShape ;
         sh:datatype     xsd:string ;
         sh:path         be_fair_bms_clinical_study:StudyName ;
@@ -162,16 +146,15 @@
         sh:description  "Name of the study\t\ne.g. CN162 Gene Express Rats Stress Antidepress Non-BMS Sponsored\n" ;
         sh:severity     sh:Violation .
 
-<http://purl.obolibrary.org/obo/NCIT_C15206-TherapeuticArea>
+obo:NCIT_C15206-TherapeuticArea
         rdf:type        sh:PropertyShape ;
         sh:datatype     xsd:string ;
         sh:path         be_fair_bms_clinical_study:TherapeuticArea ;
         sh:name         "Therapeutic Area" ;
         sh:nodeKind     sh:Literal ;
-        sh:description  "e.g. - CA, IM, CV\nNeuroscience, Cardiovascular, Metabolics, Oncology\n" ;
-        sh:severity     sh:Info .
+        sh:description  "e.g. - CA, IM, CV\nNeuroscience, Cardiovascular, Metabolics, Oncology\n" .
 
-<http://purl.obolibrary.org/obo/NCIT_C15206-StudyStatus>
+obo:NCIT_C15206-StudyStatus
         rdf:type        sh:PropertyShape ;
         sh:datatype     xsd:string ;
         sh:path         be_fair_bms_clinical_study:StudyStatus ;
@@ -181,48 +164,49 @@
         sh:description  "Status of the Protocol\ne.g. - Operationally closed, Planned, Active, Clinically complete, On Hold,\tOperationally Closed, Active, Planned, Cancelled, Clinically Completed\n" ;
         sh:severity     sh:Info .
 
-<http://purl.obolibrary.org/obo/NCIT_C15206-GBSLead>
+obo:NCIT_C15206-GBSLead
         rdf:type        sh:PropertyShape ;
         sh:datatype     xsd:string ;
         sh:path         be_fair_bms_clinical_study:GBSLead ;
         sh:name         "GBS Lead" ;
         sh:nodeKind     sh:Literal ;
-        sh:description  "Name of the GBS Lead" .
+        sh:description  "Name of the GBS Lead." .
 
-<http://purl.obolibrary.org/obo/NCIT_C15206-ClinicalDevelopmentLead>
-        rdf:type     sh:PropertyShape ;
-        sh:datatype  xsd:string ;
-        sh:path      be_fair_bms_clinical_study:ClinicalDevelopmentLead ;
-        sh:name      "Clinical Development Lead" ;
-        sh:nodeKind  sh:Literal .
+obo:NCIT_C15206-ClinicalDevelopmentLead
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:path         be_fair_bms_clinical_study:ClinicalDevelopmentLead ;
+        sh:name         "Clinical Development Lead" ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "Name of the Clinical Development Lead for the study." .
 
-<http://purl.obolibrary.org/obo/NCIT_C15206-StudyType>
+obo:NCIT_C15206-StudyType
         rdf:type        sh:PropertyShape ;
         sh:datatype     xsd:string ;
         sh:path         be_fair_bms_clinical_study:StudyType ;
         sh:name         "Study type" ;
         sh:minCount     1 ;
         sh:nodeKind     sh:Literal ;
-        sh:description  "Type of the Study\ne.g. Interventional, Observational,Non-Clinical, Interventional\n" ;
+        sh:description  "Type of the Study. Example - Interventional, Observational, Non-Clinical.\n" ;
         sh:severity     sh:Info .
 
-<http://purl.obolibrary.org/obo/NCIT_C15206-StudyDesign>
+obo:NCIT_C15206-StudyDesign
         rdf:type        sh:PropertyShape ;
         sh:datatype     xsd:string ;
         sh:path         be_fair_bms_clinical_study:StudyDesign ;
         sh:name         "Study design" ;
         sh:nodeKind     sh:Literal ;
-        sh:description  "Design of the Study \ne.g. – Open-Label, Blinded, Closed\nNone (Open Label), Double Blind IMPACT Migration, Single Blind\n" .
+        sh:description  "Design of the Study. Example - Open-Label, Blinded, Closed, None (Open Label), Double Blind IMPACT Migration, Single Blind.\n" .
 
-<http://purl.obolibrary.org/obo/NCIT_C15206-StudySponsorship>
+obo:NCIT_C15206-StudySponsorship
         rdf:type        sh:PropertyShape ;
         sh:datatype     xsd:string ;
         sh:path         be_fair_bms_clinical_study:StudySponsorship ;
         sh:name         "Study Sponsorship" ;
         sh:nodeKind     sh:Literal ;
-        sh:description  "e.g. BMS Sponsored, Externally sponsored\nBMS Sponsored, Non-BMS Sponsored, IMPACT Migration\n" .
+        sh:description  "The sponsorship information for the initiation, management and/or financing of the clinical study. Ex. - BMS Sponsored, Externally sponsored, Non-BMS Sponsored, IMPACT Migration.\n" .
 
-<http://purl.obolibrary.org/obo/NCIT_C15206-StudyExecution>
+obo:NCIT_C15206-StudyExecution
         rdf:type        sh:PropertyShape ;
         sh:datatype     xsd:string ;
         sh:path         be_fair_bms_clinical_study:StudyExecution ;
@@ -230,25 +214,25 @@
         sh:nodeKind     sh:Literal ;
         sh:description  "e.g.  Inhouse, Outsourced, Hybrid\nNo - Inhouse, Yes - Hybrid, Yes - Strategic/Full\n" .
 
-<http://purl.obolibrary.org/obo/NCIT_C15206-Indication>
+obo:NCIT_C15206-Indication
         rdf:type        sh:PropertyShape ;
         sh:datatype     xsd:string ;
         sh:path         be_fair_bms_clinical_study:Indication ;
         sh:name         "Indication" ;
         sh:nodeKind     sh:Literal ;
-        sh:description  "e.g. Melanoma, HCM, Ulcerative Colitis, Anxiety, Autistic Disorder, Atrial Fibrillation, Diabetes, Multiple Myeloma\n" .
+        sh:description  "The therapeutic indication of the study. For e.g., Melanoma, HCM, Ulcerative Colitis, Anxiety, Autistic Disorder, Atrial Fibrillation, Diabetes, Multiple Myeloma.\n" .
 
-<http://purl.obolibrary.org/obo/NCIT_C15206-StudyPhase>
+obo:NCIT_C15206-StudyPhase
         rdf:type        sh:PropertyShape ;
         sh:datatype     xsd:string ;
         sh:path         be_fair_bms_clinical_study:StudyPhase ;
         sh:name         "Study Phase" ;
         sh:minCount     1 ;
         sh:nodeKind     sh:Literal ;
-        sh:description  "Phase of the Protocol\ne.g. Phase 0, Phase 1\nPre-clinical, Phase OTH, Phase IIB\n" ;
+        sh:description  "Phase of the Protocol. Example - Phase 0, Phase 1, Pre-clinical, Phase OTH, Phase IIB.\n" ;
         sh:severity     sh:Info .
 
-<http://purl.obolibrary.org/obo/NCIT_C15206-StudyClassification>
+obo:NCIT_C15206-StudyClassification
         rdf:type        sh:PropertyShape ;
         sh:datatype     xsd:string ;
         sh:path         be_fair_bms_clinical_study:StudyClassification ;
@@ -256,37 +240,38 @@
         sh:nodeKind     sh:Literal ;
         sh:description  "Classification of the Study\ne.g. Efficacy, Safety, PK, PD\nSafety/Efficacy, Pharmacodynamics, Pharmacokinetics/dynamics, Pharmacokinetics, Bio-availability\n" .
 
-<http://purl.obolibrary.org/obo/NCIT_C15206-EnrollmentStatus>
+obo:NCIT_C15206-EnrollmentStatus
         rdf:type        sh:PropertyShape ;
         sh:datatype     xsd:string ;
         sh:path         be_fair_bms_clinical_study:EnrollmentStatus ;
         sh:name         "Enrollment status" ;
+        sh:minCount     1 ;
         sh:nodeKind     sh:Literal ;
-        sh:description  "Enrollment status\ne.g.  Completed, Recruiting, Not-Recruiting\nActive, Not Recruiting, Recruiting, Completed, Terminated\n" .
+        sh:description  "Enrollment status of the study. Example - Completed, Recruiting, Not-Recruiting\nActive, Not Recruiting, Terminated.\n" ;
+        sh:severity     sh:Warning .
 
-<http://purl.obolibrary.org/obo/NCIT_C15206-DataLocation>
+obo:NCIT_C15206-DataLocation
         rdf:type        sh:PropertyShape ;
         sh:datatype     xsd:string ;
         sh:path         be_fair_bms_clinical_study:DataLocation ;
         sh:name         "Data location" ;
         sh:nodeKind     sh:Literal ;
-        sh:description  "Global URI for the location of the data set" .
+        sh:description  "Global URI for the location of the data set." .
 
-<http://purl.obolibrary.org/obo/NCIT_C15206-ExclusionCriteria>
-        rdf:type     sh:PropertyShape ;
-        sh:datatype  xsd:string ;
-        sh:path      be_fair_bms_clinical_study:ExclusionCriteria ;
-        sh:name      "Exclusion_criteria" ;
-        sh:disjoint  be_fair_bms_clinical_study:InclusionCriteria .
+obo:NCIT_C15206-ExclusionCriteria
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:path         be_fair_bms_clinical_study:ExclusionCriteria ;
+        sh:name         "Exclusion_criteria" ;
+        sh:description  "Exclusion criteria are those characteristics that disqualify prospective subjects from inclusion in the study. For e.g.,  No data, Does not include minimum outcomes, etc." .
 
-<http://purl.obolibrary.org/obo/NCIT_C15206-InclusionCriteria>
-        rdf:type     sh:PropertyShape ;
-        sh:datatype  xsd:string ;
-        sh:path      be_fair_bms_clinical_study:InclusionCriteria ;
-        sh:name      "Inclusion_criteria" ;
-        sh:nodeKind  sh:Literal ;
-        sh:severity  sh:Violation ;
-        sh:disjoint  be_fair_bms_clinical_study:ExclusionCriteria .
+obo:NCIT_C15206-InclusionCriteria
+        rdf:type        sh:PropertyShape ;
+        sh:datatype     xsd:string ;
+        sh:path         be_fair_bms_clinical_study:InclusionCriteria ;
+        sh:name         "Inclusion_criteria" ;
+        sh:nodeKind     sh:Literal ;
+        sh:description  "Inclusion criteria are characteristics that the prospective subjects must have if they are to be included in the study. For e.g., Minimum outcomes: coronary deaths & non-fatal myocardial infarction." .
 
 teamwork:Vocabulary  rdfs:subClassOf  owl:Ontology .
 
