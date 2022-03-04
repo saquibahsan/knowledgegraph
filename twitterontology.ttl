@@ -1,0 +1,96 @@
+# baseURI: urn:x-evn-master:ns1
+# imports: http://datashapes.org/graphql
+# imports: http://topbraid.org/teamworkconstraints
+
+@prefix metadata: <http://topbraid.org/metadata#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix teamwork: <http://topbraid.org/teamwork#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns1: <http://twitter.com/peformance_data/> .
+
+<urn:x-evn-master:ns1>
+        rdf:type         owl:Ontology ;
+        owl:imports      <http://datashapes.org/graphql> ;
+        rdfs:comment     "A Twitter ontology for performance testing." ;
+        rdfs:label       "ns1" ;
+        metadata:status  metadata:UnderDevelopmentStatus ;
+        <http://topbraid.org/swa#defaultNamespace>  "http://twitter.com/peformance_data/" .
+
+ns1:User  rdf:type  owl:Class ;
+        rdf:type         sh:NodeShape ;
+        rdfs:comment     "A Twitter User" ;
+        sh:property      ns1:User-indegree ;
+        sh:property      ns1:User-outdegree ;
+        sh:property      ns1:User-user_id ;
+        sh:property      ns1:User-follower_id ;
+        sh:property      ns1:User-bad_user_id ;
+        sh:property      ns1:User-user_screen_name ;
+        rdfs:label       "User" ;
+        rdfs:subClassOf  owl:Thing ;
+        sh:targetClass   ns1:User ;
+        sh:nodeKind      sh:IRI .
+
+ns1:User-indegree
+        rdf:type     sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:path      ns1:indegree ;
+        sh:name      "indegree" ;
+        sh:minCount  1 ;
+        sh:maxCount  1 ;
+        sh:severity  sh:Violation .
+
+ns1:User-outdegree
+        rdf:type     sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:path      ns1:outdegree ;
+        sh:name      "outdegree" ;
+        sh:minCount  1 ;
+        sh:maxCount  1 ;
+        sh:severity  sh:Violation .
+
+ns1:User-user_id
+        rdf:type     sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:path      ns1:user_id ;
+        sh:name      "user_id" ;
+        sh:minCount  1 ;
+        sh:maxCount  1 ;
+        sh:severity  sh:Violation .
+
+ns1:User-follower_id
+        rdf:type     sh:PropertyShape ;
+        sh:path      ns1:follower_id ;
+        sh:node      ns1:Follower ;
+        sh:nodeKind  sh:IRI ;
+        sh:name      "follower_id" ;
+        sh:severity  sh:Violation .
+
+ns1:User-bad_user_id
+        rdf:type     sh:PropertyShape ;
+        sh:path      ns1:bad_user_id ;
+        sh:node      ns1:BadUser ;
+        sh:nodeKind  sh:IRI ;
+        sh:name      "bad_user_id" ;
+        sh:maxCount  1 ;
+        sh:severity  sh:Violation .
+
+ns1:User-user_screen_name
+        rdf:type     sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:path      ns1:user_screen_name ;
+        sh:name      "user_screen_name" ;
+        sh:minCount  1 ;
+        sh:severity  sh:Violation .
+
+teamwork:Vocabulary  rdfs:subClassOf  owl:Ontology .
+
+<http://teamwork.topbraidlive.org/ontologyprojects#Ontology>
+        rdfs:subClassOf  teamwork:Vocabulary .
+
+<urn:x-evn-master:ns1>
+        rdf:type     teamwork:Vocabulary ;
+        rdf:type     <http://teamwork.topbraidlive.org/ontologyprojects#Ontology> ;
+        owl:imports  <http://topbraid.org/teamworkconstraints> .
