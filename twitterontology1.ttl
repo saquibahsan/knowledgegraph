@@ -1,0 +1,58 @@
+@prefix metadata: <http://topbraid.org/metadata#> .
+@prefix ns1: <http://twitter.com/peformance_data/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix teamwork: <http://topbraid.org/teamwork#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+ns1:User a owl:Class ;
+    a sh:NodeShape ;
+    sh:targetClass ns1:User ;
+    sh:property [
+        sh:path ns1:bad_user_id ;
+        sh:name "bad_user_id" ;
+        sh:node ns1:BadUser ;
+        sh:nodeKind sh:IRI ;
+        sh:name "bad_user_id" ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path ns1:follower_id ;
+        sh:node ns1:Follower ;
+        sh:nodeKind sh:IRI ;
+        sh:name "follower_id" ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path ns1:indegree ;
+        sh:datatype xsd:string ;
+        sh:name "indegree" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:datatype  xsd:string ;
+        sh:path      ns1:outdegree ;
+        sh:name      "outdegree" ;
+        sh:minCount  1 ;
+        sh:maxCount  1 ;
+        sh:severity  sh:Violation ;
+    ];
+    sh:property [
+        sh:path ns1:user_id ;
+        sh:datatype xsd:string ;
+        sh:name "user_id" ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path ns1:user_screen_name ;
+        sh:datatype xsd:string ;
+        sh:name "user_screen_name" ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:nodeKind sh:IRI .
