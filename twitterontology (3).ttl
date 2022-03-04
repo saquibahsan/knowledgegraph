@@ -1,0 +1,107 @@
+# baseURI: urn:x-evn-master:twitterontology
+# imports: http://datashapes.org/graphql
+# imports: http://topbraid.org/teamworkconstraints
+
+@prefix metadata: <http://topbraid.org/metadata#> .
+@prefix twitterontology: <http://twitter.com/peformance_data/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix teamwork: <http://topbraid.org/teamwork#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<urn:x-evn-master:twitterontology>
+        rdf:type         owl:Ontology ;
+        owl:imports      <http://datashapes.org/graphql> ;
+        rdfs:comment     "A Twitter ontology for performance testing." ;
+        rdfs:label       "TwitterOntology" ;
+        metadata:status  metadata:UnderDevelopmentStatus ;
+        <http://topbraid.org/swa#defaultNamespace>  "http://twitter.com/peformance_data/" .
+
+twitterontology:User  rdf:type  owl:Class ;
+        rdf:type         sh:NodeShape ;
+        rdfs:comment     "A Twitter User" ;
+        sh:property      twitterontology:User-indegree ;
+        sh:property      twitterontology:User-outdegree ;
+        sh:property      twitterontology:User-user_id ;
+        sh:property      twitterontology:User-follower_id ;
+        sh:property      twitterontology:User-bad_user_id ;
+        sh:property      twitterontology:User-user_screen_name ;
+        rdfs:label       "User" ;
+        rdfs:subClassOf  owl:Thing ;
+        sh:targetClass   twitterontology:User .
+
+twitterontology:Follower
+        rdf:type         owl:Class ;
+        rdf:type         sh:NodeShape ;
+        rdfs:comment     "The class is used to store followers of a twitter user profile." ;
+        rdfs:label       "Follower" ;
+        rdfs:subClassOf  owl:Thing .
+
+twitterontology:BadUser
+        rdf:type         owl:Class ;
+        rdf:type         sh:NodeShape ;
+        rdfs:comment     "The class is used to store bad users of a twitter user profile." ;
+        rdfs:label       "Bad User" ;
+        rdfs:subClassOf  owl:Thing .
+
+twitterontology:User-indegree
+        rdf:type     sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:path      twitterontology:indegree ;
+        sh:name      "indegree" ;
+        sh:minCount  1 ;
+        sh:maxCount  1 ;
+        sh:severity  sh:Violation .
+
+twitterontology:User-outdegree
+        rdf:type     sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:path      twitterontology:outdegree ;
+        sh:name      "outdegree" ;
+        sh:minCount  1 ;
+        sh:maxCount  1 ;
+        sh:severity  sh:Violation .
+
+twitterontology:User-user_id
+        rdf:type     sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:path      twitterontology:user_id ;
+        sh:name      "user_id" ;
+        sh:minCount  1 ;
+        sh:maxCount  1 ;
+        sh:severity  sh:Violation .
+
+twitterontology:User-follower_id
+        rdf:type     sh:PropertyShape ;
+        sh:path      twitterontology:follower_id ;
+        sh:name      "follower_id" ;
+        sh:class     twitterontology:Follower ;
+        sh:severity  sh:Violation .
+
+twitterontology:User-bad_user_id
+        rdf:type     sh:PropertyShape ;
+        sh:path      twitterontology:bad_user_id ;
+        sh:name      "bad_user_id" ;
+        sh:class     twitterontology:BadUser ;
+        sh:maxCount  1 ;
+        sh:severity  sh:Violation .
+
+twitterontology:User-user_screen_name
+        rdf:type     sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:path      twitterontology:user_screen_name ;
+        sh:name      "user_screen_name" ;
+        sh:minCount  1 ;
+        sh:severity  sh:Violation .
+
+teamwork:Vocabulary  rdfs:subClassOf  owl:Ontology .
+
+<http://teamwork.topbraidlive.org/ontologyprojects#Ontology>
+        rdfs:subClassOf  teamwork:Vocabulary .
+
+<urn:x-evn-master:twitterontology>
+        rdf:type     teamwork:Vocabulary ;
+        rdf:type     <http://teamwork.topbraidlive.org/ontologyprojects#Ontology> ;
+        owl:imports  <http://topbraid.org/teamworkconstraints> .
